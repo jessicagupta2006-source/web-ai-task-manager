@@ -28,7 +28,8 @@ db.exec(`
     title TEXT NOT NULL,
     category TEXT NOT NULL,
     priority TEXT NOT NULL,
-    status TEXT NOT NULL
+    status TEXT NOT NULL,
+    isAI INTEGER DEFAULT 0
   )
 `);
 
@@ -170,6 +171,8 @@ User request: ${prompt}`,
 });
 
 // Start server
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
