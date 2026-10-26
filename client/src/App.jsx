@@ -5,7 +5,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
 useEffect(() => {
-  fetch("http://localhost:5000/api/tasks")
+  fetch("https://web-ai-task-manager.onrender.com/api/tasks")
     .then((response) => response.json())
     .then((data) => {
       setTasks(data);
@@ -38,7 +38,7 @@ useEffect(() => {
   };
 
   try {
-    const response = await fetch("http://localhost:5000/api/tasks", {
+    const response = await fetch("https://web-ai-task-manager.onrender.com/api/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ useEffect(() => {
 
 const deleteTask = async (id) => {
   try {
-    const response = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+    const response = await fetch(`https://web-ai-task-manager.onrender.com/api/tasks/${id}`, {
       method: "DELETE",
     });
 
@@ -98,7 +98,7 @@ const generateAITask = async () => {
     setAiMessage("AI is creating your task...");
 
     // Ask our backend AI endpoint to understand the request
-    const aiResponse = await fetch("http://localhost:5000/api/ai-task", {
+    const aiResponse = await fetch("https://web-ai-task-manager.onrender.com/api/ai-task", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -125,7 +125,7 @@ const generateAITask = async () => {
     };
 
     // Save the AI-generated task to SQLite
-    const saveResponse = await fetch("http://localhost:5000/api/tasks", {
+    const saveResponse = await fetch("https://web-ai-task-manager.onrender.com/api/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
