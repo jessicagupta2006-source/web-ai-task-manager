@@ -175,7 +175,7 @@ const generateAITask = async () => {
       {/* Header */}
       <header className="header">
         <div>
-          <h1>AI Task Manager</h1>
+          <h1>TaskFlow AI</h1>
           <p>
             Organize your work, track progress and manage tasks intelligently.
           </p>
